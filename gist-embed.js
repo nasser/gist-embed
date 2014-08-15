@@ -40,7 +40,7 @@
       // make block level so loading text shows properly
       $elem.css('display', 'block');
 
-      id = $elem.data('gist-id') || '';
+      id = $elem.attr('href').attr("href").split("/").slice(-1)[0] || '';
       file = $elem.data('gist-file');
       hideFooterOption = $elem.data('gist-hide-footer') === true;
       hideLineNumbersOption = $elem.data('gist-hide-line-numbers') === true;
@@ -163,8 +163,8 @@
   };
 
   $(function() {
-    // find all elements containing "data-gist-id" attribute.
-    $('[data-gist-id]').gist();
+    // find all links to gists, and embed them
+    $('a[href^="https://gist.github.com/"]').gist();
   });
 
 })(jQuery);
