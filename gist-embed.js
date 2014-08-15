@@ -40,7 +40,7 @@
       // make block level so loading text shows properly
       $elem.css('display', 'block');
 
-      id = $elem.attr('href').attr("href").split("/").slice(-1)[0] || '';
+      id = $elem.attr("href").split("/").slice(-1)[0] || '';
       file = $elem.data('gist-file');
       hideFooterOption = $elem.data('gist-hide-footer') === true;
       hideLineNumbersOption = $elem.data('gist-hide-line-numbers') === true;
